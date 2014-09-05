@@ -12,7 +12,7 @@ public class Cyclometer {
         int countsTrip1=1561; // the amount of counts during Trip 1
         int countsTrip2=9037; // the amount of counts during Trip 2
         double wheelDiameter=27.0,
-        PI=3.14150, // a number used to calculate distance
+        PI=3.14159, // a number used to calculate distance
         feetPerMile=5280, //converting miles into feet and vice versa
         inchesPerFoot=12, //converting feet into inches and vice versa
         secondsPerMinute= 60; //how many seconds there are per minute
