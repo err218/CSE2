@@ -12,17 +12,20 @@ public class Arithmetic{
         
         //Number of pairs of socks
         int nSocks=3;
+        
         //Cost per pair of socks
         //('$' is part of variable name)
         double sockCost$=2.58;
         
         //Number of drinking glasses
         int nGlasses=6;
+        
         //Cost per glass
         double glassCost$= 2.29;
         
         //Number of boxes of envelopes
         int nEnvelopes=1;
+        
         //Cost per box of enevelopes
         double envelopeCost$=3.25;
         double taxPercent=0.06;
@@ -30,7 +33,6 @@ public class Arithmetic{
        
         //total costs of each category 
         //tax on each kind of item
-        
         double totalSockCost= nSocks*sockCost$;
         double taxSock= totalSockCost*taxPercent;
        
@@ -41,7 +43,6 @@ public class Arithmetic{
         
         double totalEnvelopesCost=nEnvelopes*envelopeCost$;
         double taxEnvelopes= totalEnvelopesCost*taxPercent;
-        
         
         //total not including sales tax.
         double totalPurchase= totalSockCost+totalGlassesCost+totalEnvelopesCost; 
@@ -58,9 +59,7 @@ public class Arithmetic{
         //costs
         System.out.println("Each pair of socks costs $"+ sockCost$);
         System.out.println("Each glass costs $" + glassCost$);
-        System.out.println("Each box of envelopes cost $"+ envelopeCost$);
-            
-            
+        System.out.println("Each box of envelopes costs $"+ envelopeCost$);
             
         //how many of each item are purchased    
         System.out.println(nSocks+ " pairs of socks are purchased.");
@@ -73,26 +72,19 @@ public class Arithmetic{
         System.out.println("The total cost for envelopes is $"+totalEnvelopesCost);
         
         //Tax for each type of item.
-        
         System.out.printf("There is $ " + "%.2f" + " of tax on the sock purchase.\n", taxSock);
-    
         System.out.printf("There is $"+ "%.2f" + " of tax on the glasses purchase.\n", taxGlasses);
-       
         System.out.printf("There is $"+ "%.2f" + " of tax on the envelope purchase.\n", taxEnvelopes);
         
          //Purchase without sales tax
         System.out.println("The total purchase, before sales tax, is $ "+ totalPurchase);
         
         //Sales tax
-        
         System.out.printf("The total sales tax is $"+ "%.2f"+ "\n", totalTax );
-        
-        
         
         //Final Transaction
         System.out.printf("The final transaction comes out to be $"+ "%.2f", finalTransaction);
        
-        
         
     }
 }
