@@ -13,14 +13,18 @@ import java.util.Scanner;
 
 public class Bicycle {
    public static void main(String [] arg){
+       
+       //declare variable 
        Scanner myScanner;
        
        myScanner= new Scanner (System.in);
        
+       //User enters number of Seconds
        System.out.print("Enter the number of seconds: ");
        
        int nSeconds=myScanner.nextInt();
        
+       //User enters number of Counts
        System.out.print("Enter the number of counts on the Cyclometer: ");
        
        int nCounts=myScanner.nextInt();
@@ -34,11 +38,11 @@ public class Bicycle {
        double distance = nCounts*wheelDiameter*PI/(inchesPerFoot*feetPerMile);
        double averageMPH= distance/((nSeconds/secondsPerMinute)/60);
        
+       //Prints out distance and amount of time the trip took
        System.out.printf("The distance was "+ "%.2f"+ " and took "+ nSeconds/secondsPerMinute + " minutes. \n", distance);
+       
+       //Prints out average MPH
        System.out.printf("The average mph was " +"%.2f", averageMPH);
    } 
-    
-    
-    
     
 }
