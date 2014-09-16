@@ -23,18 +23,21 @@ public class Root{
         double guess3 =((2*guess2*guess2*guess2+xValue)/(3*guess2*guess2));
         double guess4 =((2*guess3*guess3*guess3+xValue)/(3*guess3*guess3));
         double guess5 =((2*guess4*guess4*guess4+xValue)/(3*guess4*guess4));
+        double guess6=((2*guess5*guess5*guess5+xValue)/(3*guess5*guess5));
         
         //show guess5 cubed to see if guess was accurate
-        double guess5Cubed=guess5*guess5*guess5;
+        double guess6Cubed=guess6*guess6*guess6;
         
         System.out.println("The first guess of the cube root is: " + guess1);
         System.out.println("The second guess of the cube root is: " + guess2);
         System.out.println("The third guess of the cube root is: " + guess3);
         System.out.println("The fourth guess of the cube root is: " + guess4);
         System.out.println("The fifth guess of the cube root is: " + guess5);
+        System.out.println("The sixth guess of the cube root is: " + guess6);
         
-        System.out.println("The cube root is: "+ guess5);
-        System.out.println(guess5+"*"+guess5+"*"+guess5+ "="+ guess5Cubed);
+        
+        System.out.println("The cube root is: "+ guess6);
+        System.out.println(guess6+"*"+guess6+"*"+guess6+ "="+ guess6Cubed);
         
         
     }
