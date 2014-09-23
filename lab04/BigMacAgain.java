@@ -20,12 +20,14 @@ public class BigMacAgain{
        double totalCostWithFries;
        String answer;
        
+       //if an int is entered
        if(myScanner.hasNextInt()){
            numberOfBigMacs=myScanner.nextInt();
            
            totalCostOfBigMacs=numberOfBigMacs*price;
            totalCostWithFries=totalCostOfBigMacs*priceFries;
            
+           //if int is positive
            if(numberOfBigMacs>0){
              
                System.out.printf("The cost of "+ numberOfBigMacs+ " Big Macs is "+numberOfBigMacs+"* $"+price+"="+"%.2f", totalCostOfBigMacs);
@@ -43,13 +45,14 @@ public class BigMacAgain{
                   
                }
            }
-           
+           //if int is not positive
            else{
                System.out.println("You did not enter an int>0.");
+               return;
               
            } 
        }
-       
+       //if what is entered is not an int
        else{
           System.out.println("You did not enter an int.");
           return;
