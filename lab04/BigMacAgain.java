@@ -40,10 +40,25 @@ public class BigMacAgain{
                  System.out.printf("Your total is: $"+"%.2f"+ "+" + priceFries+ "=" +"%.2f"+". Thank you and have a good day!", totalCostOfBigMacs,totalCostWithFries);
                }
                
-               if(answer.equals("N")){
+               else if(answer.equals("y")){
+                 System.out.printf("Your total is: $"+"%.2f"+ "+" + priceFries+ "=" +"%.2f"+". Thank you and have a good day!", totalCostOfBigMacs,totalCostWithFries);
+               }
+               
+               
+              else if(answer.equals("N")){
                  System.out.printf("Your total is: $"+ "%.2f"+". Thank you and have a good day!", totalCostOfBigMacs); 
                   
                }
+               
+              else if(answer.equals("n")){
+                 System.out.printf("Your total is: $"+ "%.2f"+". Thank you and have a good day!", totalCostOfBigMacs); 
+                  
+               }
+               
+              else{
+                  System.out.println("You did not enter Y/y/N/n.");
+                  return;
+              }
            }
            //if int is not positive
            else{
