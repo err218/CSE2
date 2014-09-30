@@ -25,7 +25,7 @@ public class BigMacAgain{
            numberOfBigMacs=myScanner.nextInt();
            
            totalCostOfBigMacs=numberOfBigMacs*price;
-           totalCostWithFries=totalCostOfBigMacs*priceFries;
+           totalCostWithFries=totalCostOfBigMacs+priceFries;
            
            //if int is positive
            if(numberOfBigMacs>0){
