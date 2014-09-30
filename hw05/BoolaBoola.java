@@ -1,6 +1,10 @@
 /*Emma Resnick
   CSE2
-  hw05 Program #2 */
+  hw05 Program #2 
+  
+  This program takes three random variables and randomly pairs them with one of four 
+  possible operator sets. The user is given the particular set and has to enter if the value of
+  what is given to them is true or false.*/
   
   //import scanner and Random
  import java.util.Scanner;
@@ -23,6 +27,7 @@
          boolean outcome3= variable1 || variable2 &&  variable3;
          boolean outcome4= variable1 || variable2 ||  variable3;
          
+         //allows for a random case to be chosen
          Random randNumber= new Random();
          int randomDigit= randNumber.nextInt(4)+1;
          
@@ -34,7 +39,7 @@
          String choice4= ("Does " +variable1+" || "+variable2+" || "+variable3+ " have the value True (T or t) or False (F or f)? ");
          String [] questionChoices ={choice1,choice2,choice3,choice4};
         
-        
+        //enters arandom question out of the four above choices
          Random randQuestionChoice= new Random();
          question= questionChoices [randQuestionChoice.nextInt(questionChoices.length)];
          

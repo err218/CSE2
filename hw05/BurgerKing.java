@@ -1,6 +1,10 @@
 /* Emma Resnick
 CSE2
-hw05- Program #1 */
+hw05- Program #1 
+
+
+This program allows the user to choose to buy a burger, soda, or fries. From there, 
+the user can choose from about 3-4 different options for the specific choice they made*/
 
 import java.util.Scanner;
 
