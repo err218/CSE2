@@ -13,15 +13,47 @@
           
           char game;
           char [] charArray= {'R','r','C','c','P','p'};
-          
+          int number=(int)(Math.random()*38)+1;
         
-              game=myScanner.next().charAt(0);
+              //game=myScanner.next().charAt(0);
               
-              switch(game){
+              switch(game=myScanner.next().charAt(0)){
                   case 'R':
-                      int number=(int)(Math.random()*38)+1;
-                      System.out.println("Roulette"+ number);
+                      
+                      switch(number){
+                        case 38:
+                          System.out.println("Your number is: "+ 00);
+                          break;
+                        default:
+                          System.out.println("Your number is: "+ number);
+                          break;
+                      }
+                      break;
+                  case 'r':
+                      
+                      switch(number){
+                        case 38:
+                          System.out.println("Your number is: "+ 00);
+                          break;
+                        default:
+                          System.out.println("Your number is: "+ number);
+                          break;
+                      }
+                      break;
+                  case 'C':
+                      System.out.println("Craps has not been implemented yet.");
+                      break;
+                  case 'c':
+                      System.out.println("Craps has not been implemented yet.");
+                      break;
+                  case 'P':
+                      System.out.println("Pick a card has not been implemented yet.");
+                      break;
+                  case 'p':
+                      System.out.println("Pick a card has not been implemented yet.");
+                      break;
               }
+                      
           
       }
       
