@@ -6,7 +6,7 @@ public class Enigma2{
     switch(n){
       case 12: 
       case 13: out+=13;
-      case 40: out+=40/0;
+      case 40: out+=40/1;
     }
     System.out.println(out);
   }

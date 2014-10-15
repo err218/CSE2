@@ -55,7 +55,7 @@ public class Enigma3{
         System.out.println("n= " +n+ " k= "+k);
     }
     System.out.println("n= " +n+ " k= "+k);
-     out+=1/n + 1/k;   
+     out+=1/n + 1/(k+1);   
  
     System.out.println(out);
   }
