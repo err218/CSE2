@@ -29,14 +29,14 @@
                     while(upperInterval-lowerInterval>(0.0000001*upperInterval)){
                     middleInterval=(upperInterval+lowerInterval)/2.00;
                     
-                      if(lowerInterval*lowerInterval<myNumber&&upperInterval*upperInterval>myNumber){
+                     if(lowerInterval*lowerInterval<myNumber&&upperInterval*upperInterval>myNumber){
                           
-                          //if middle squared is less than my number, than middle becomes the lower limit
+                          //if middle squared is less than my number, then middle becomes the lower limit
                           if(middleInterval*middleInterval<myNumber){
                              lowerInterval=middleInterval; 
                           }
                           
-                          //if middle squared is more than my number, than middle becomes the upper limit
+                          //if middle squared is more than my number, then middle becomes the upper limit
                           if(middleInterval*middleInterval>myNumber){
                              upperInterval=middleInterval; 
                           }
