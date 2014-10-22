@@ -4,19 +4,19 @@ public class MoreLoops {
         Scanner scan = new Scanner(System.in);
         int n = 0;
 
-       System.out.print("Enter an int- ");
+        System.out.print("Enter an int- ");
         // while (!scan.hasNextInt()) {
         //     scan.next(); //get rid of the junk entered by user
         //     System.out.print("You did not enter an int; try again- ");
         // }
-        
-        do{
-          if(!scan.hasNextInt()){
-             scan.next();  
-             System.out.print("You did not enter an int; try again- ");
-          } 
-         }while(!scan.hasNextInt());
-        
+
+        do {
+            if (!scan.hasNextInt()) {
+                scan.next();
+                System.out.print("You did not enter an int; try again- ");
+            }
+        } while (!scan.hasNextInt());
+
         //COMMENT OUT THE ABOVE 5 LINES AND REPLACE THE CODE WITH A
         //DO-WHILE LOOP
         n = scan.nextInt();
@@ -27,16 +27,16 @@ public class MoreLoops {
         //     }
         //     System.out.println();
         // }
-        
-        int j=0;
+
+        int j = 0;
         int k;
-        
-        while(j < n && j < 40){
-            k=0;
-          while( k < j + 1){
-              System.out.print('*');
-              k++;
-          } 
+
+        while (j < n && j < 40) {
+            k = 0;
+            while (k < j + 1) {
+                System.out.print('*');
+                k++;
+            }
             System.out.println();
             j++;
         }
@@ -50,46 +50,80 @@ public class MoreLoops {
         //     k++;
         // }
         // while (k < 4);
-        
+
         //figure out how to make k=4 happen once 
-        
-        while(k<=4){
-            
-             System.out.println("k=" + k);
-             k++;
-            
+
+        while (k <= 4) {
+
+            System.out.println("k=" + k);
+            k++;
+
         }
-        
+
         //COMMENT OUT THE ABOVE FIVE LINES AND REPLACE THE CODE
         //WITH A WHILE LOOP
 
         int count = 0;
-        while (true) {
-            switch (n) {
-                default: System.out.println(n + " is > 5 or <1");
-                break;
-                case 1:
-                case 2:
-                    System.out.print("Case 2 ");
-                    continue;
-                case 3:
-                    break;
-                case 4:
-                    System.out.println("Case 4");
-                case 5:
-                    System.out.println("Case 5");
-                    break;
-            }
-            count++;
-            if (count > 10)
-                break;
-        }
-        
-        while (true) {
-            if (n == 1) {
+        // while (true) {
+        //     switch (n) {
+        //         default: System.out.println(n + " is > 5 or <1");
+        //         break;
+        //         case 1:
+        //         case 2:
+        //             System.out.print("Case 2 ");
+        //             continue;
+        //         case 3:
+        //             break;
+        //         case 4:
+        //             System.out.println("Case 4");
+        //         case 5:
+        //             System.out.println("Case 5");
+        //             break;
+        //     }
+        //     count++;
+        //     if (count > 10)
+        //         break;
+        // }
 
+        if (true) {
+            if (n == 1) {
+                n++;
+            }
+
+            
+            if (n == 2) {
+                for(int i=0; i<=n;i--){
+                System.out.print("Case 2 ");
+                continue;
+                }
+                
+            }
+
+            if (n == 3) {
+              return;
+            }
+
+            if (n == 4) {
+                System.out.println("Case 4");
+                n++;
+            }
+
+            if (n == 5) {
+                System.out.println("Case 5");
+              return;
+            }
+            
+             if(n>5||n<1) {
+                 System.out.println(n + " is > 5 or <1");  
+              }
+
+            count++;
+            if (count > 10) {
+              return;
             }
         }
+
+
         //COMMENT OUT THE ABOVE 16 LINES AND REWRITE THE CODE USING
         // ONLY FOR LOOPS AND IF STATEMENS. BEFORE DOING SO, TRY
         //RUNNING THE CODE WITH VARIOUS INPUTTED VALUES, E.G.,
