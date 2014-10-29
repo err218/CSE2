@@ -40,7 +40,7 @@ public class HW8 {
     //first section of code/ first prompt for user
     public static char getInput(Scanner scanInput, String letter) {
 
-            for (int i = 0; i < letter.length(); i++) {
+            for (int i = 0; i <= letter.length(); i++) {
               char c= scanInput.next().charAt(0);
                     //isolates first char in string
                     if (c == letter.charAt(i)) {
@@ -55,16 +55,20 @@ public class HW8 {
 
                     //if char other than ones used in string are used
                     else {
-                        System.out.print("You did not enter from the list " + letter);
-                        System.exit(0);
-                    }
-
-                    //if more than one char is entered
-                    if (scanInput.next(".").length() > letter.length()) {
+                        
+                        
+                        if (scanInput.next().length() > 1) {
                         System.out.print("You should type only one character. Try again :");
-                        System.exit(0);
+                      
+                        }
+                        
+                        else{
+                             System.out.print("You did not enter from the list " + letter);
+                        }
+                        
                     }
 
+    
 
                
 
