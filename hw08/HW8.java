@@ -12,9 +12,6 @@ of the four chars is entered, the user is brought to the final step, in which th
 from 0 through 9, and then their char is displayed.
 */
 
-/*
-I am aware that letter.charAt(i) is being misdefined, I am just not sure why.
-*/
 
 
 
@@ -160,7 +157,10 @@ public class HW8 {
             System.exit(0);
         }
         
-        
+        /*
+        I know why this section allows any char in here. See above in first method, I just did not have time to implement it. If char is
+        greater than 1, then it cannot be taken and the user is prompted to try again
+        */
         
         return scanInput.next(".").charAt(0);
     }
