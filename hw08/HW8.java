@@ -41,15 +41,15 @@ public class HW8 {
     public static char getInput(Scanner scanInput, String letter) {
 
             for (int i = 0; i <= letter.length(); i++) {
-              char c= scanInput.next().charAt(0);
+              String c= scanInput.next();
                     //isolates first char in string
-                    if (c == letter.charAt(i)) {
+                    if (c.charAt(0) == letter.charAt(i)) {
                         return letter.charAt(i);
 
                     }
                     
                     //isolates second char in string
-                    if (c == letter.charAt(i + 1)) {
+                    if (c.charAt(0) == letter.charAt(i + 1)) {
                         return letter.charAt(i + 1);
                     }
 
@@ -57,7 +57,7 @@ public class HW8 {
                     else {
                         
                         
-                        if (scanInput.next().length() > 1) {
+                        if (c.length() > 1) {
                         System.out.print("You should type only one character. Try again :");
                       
                         }
@@ -159,6 +159,9 @@ public class HW8 {
             System.out.print("You entered: " + scanInput.next("."));
             System.exit(0);
         }
+        
+        
+        
         return scanInput.next(".").charAt(0);
     }
 
