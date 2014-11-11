@@ -97,6 +97,7 @@ public class BlockedAgain {
                 //how many rows are being printed
                 for (int row = 1; row <= i; row++) {
 
+
                     //centers number shown
                     for (int spaceLeft = 1; spaceLeft <= count1; spaceLeft++) {
                         System.out.print(" ");
@@ -125,6 +126,7 @@ public class BlockedAgain {
                     for (int spaceLeft = 1; spaceLeft <= count1; spaceLeft++) {
                         System.out.print(" ");
                     }
+                    
                     //centers dashes shown
                     for (int spaceRight = 9; spaceRight >= count2; spaceRight--) {
                         System.out.print(" ");
