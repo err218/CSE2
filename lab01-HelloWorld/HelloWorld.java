@@ -9,6 +9,7 @@
 // java HelloWorld//
 
 // define a class
+import java.util.Scanner;
 public class HelloWorld {
 
     //add main method
@@ -152,61 +153,90 @@ public class HelloWorld {
         // 9
 
 
-    //     for (int i = 0; i <= 4; i++) {
-    //         for (int j = -1; j < i; j++) {
-    //             System.out.print(i);
-    //         }
-    //         System.out.println("");
-    //     }
+        //     for (int i = 0; i <= 4; i++) {
+        //         for (int j = -1; j < i; j++) {
+        //             System.out.print(i);
+        //         }
+        //         System.out.println("");
+        //     }
 
-    //     for (int i = 5; i <= 9; i++) {
-    //         for (int j = 10; j > i; j--) {
-    //             System.out.print(i);
-    //         }
-    //         System.out.println("");
-    //     }
-
-
-    // }
+        //     for (int i = 5; i <= 9; i++) {
+        //         for (int j = 10; j > i; j--) {
+        //             System.out.print(i);
+        //         }
+        //         System.out.println("");
+        //     }
 
 
+        // }
 
 
-// for(int x=7; x<12; x+=2) {
-  
-//     System.out.println(x);
-// } 
 
-// int end =6;
 
-// for(int i=1; i<=end; i++){
-  
-  
-//     for(int j=0; j<i; j++){
+        // for(int x=7; x<12; x+=2) {
+
+        //     System.out.println(x);
+        // } 
+
+        // int end =6;
+
+        // for(int i=1; i<=end; i++){
+
+
+        //     for(int j=0; j<i; j++){
+
+        //         System.out.print(i);
+
+        //     }
+        //     System.out.println( );
+        // }
+
+
+        //  int start=0;
+
+        // int eq=0;
+
+        // for(int i=1; i<=4; i++){
+        //     int equation = start+ (int)Math.pow(i,i);
+
+        //     eq=eq+equation;
+        // }
+
+        //   System.out.print(eq);
+        // }
+
+
+           Scanner scan = new Scanner(System.in);
+      int OddCount = 0;
+      int EvenCount = 0;
+      String s = null;
+      System.out.println("Enter a list of integers.");
+       if(!s.equals("\\n") ){
+      do{
+         int n = scan.nextInt();
+         if (n%2 == 0){
+            EvenCount++;
+            }
+         else{
+            OddCount++;
+            }
+         s = scan.next();
         
-//         System.out.print(i);
-    
-//     }
-//     System.out.println( );
-// }
-
-
- int start=0;
-
-int eq=0;
-    
-for(int i=1; i<=4; i++){
-    int equation = start+ (int)Math.pow(i,i);
+      } while(true);
+       }
+       
+       else{
+           break;
+       }
+     
+      
+      System.out.println("Even Count: " + EvenCount);
+      System.out.println("Odd Count: " + OddCount);
    
-    eq=eq+equation;
-}
 
-  System.out.print(eq);
 }
 
 
-
- 
 
 
 }
