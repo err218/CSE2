@@ -21,12 +21,12 @@ public class FindDuplicates {
             System.out.println(out);
             out = "The array ";
             out += listArray(num);
-            // if (exactlyOneDup(num)) {
-            //     out += "has ";
-            // }
-            // else {
-            //     out += "does not have ";
-            // }
+            if (exactlyOneDup(num)) {
+                out += "has ";
+            }
+            else {
+                out += "does not have ";
+            }
             out += "exactly one duplicate.";
             System.out.println(out);
             System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
@@ -45,24 +45,47 @@ public class FindDuplicates {
         out += "} ";
         return out;
     }
-    
-    public static boolean hasDups(int x[]){
-        int[] array;
-        array = new int[x.length];
-        
-        for (int i=0; i<array.length; i++){
-            for (int j=0; j<i; j++){
-                if(array[i]==array[j]&&j!=0&&i!=0){
+
+    public static boolean hasDups(int[] x) {
+
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x.length; j++) {
+
+                if (x[i] == x[j] & i != j) {
                     return true;
-                }
-                
-                else {
-                    return false;
                 }
             }
         }
-       return true | false;
+        return false;
     }
+
+
+    public static boolean exactlyOneDup(int[] x) {
+        int counter = 0;
+
+        for (int i = 0; i < x.length; i++) {
+            
+            for (int j = 0; j < x.length; j++) {
+                if (x[i] == x[j] & i != j) {
+
+                
+                    if (counter !=1) {
+                         break;
+                    }
+                    
+                    return true;
+                }
+
+            }
+            if (counter>=2){
+                break;
+            }
+            counter++;
+            
+        }
+        return false;
+    }
+
 }
 
 // Sample Output:
