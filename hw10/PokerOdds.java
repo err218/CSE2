@@ -1,3 +1,18 @@
+/*Emma Resnick
+ CSE2
+ HW10
+ Program 2
+ 
+ 
+ This program first allows the user to get dealt a hand of cards to play poker. This can be done until 
+ the user decides otherwise. Once the user quits out of the dealing, a frequency chart is created of all
+ the frequencies of each rank if they appear only once in a hand.
+*/
+
+
+
+
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Arrays;
