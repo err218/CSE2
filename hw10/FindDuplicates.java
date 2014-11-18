@@ -61,29 +61,41 @@ public class FindDuplicates {
 
 
     public static boolean exactlyOneDup(int[] x) {
-        int counter = 0;
+        int counter = -1;
+        int i=0;
 
-        for (int i = 0; i < x.length; i++) {
-            
+        for ( i = 0; i < x.length; i++) {
+
             for (int j = 0; j < x.length; j++) {
                 if (x[i] == x[j] & i != j) {
-
-                
-                    if (counter !=1) {
-                         break;
-                    }
-                    
-                    return true;
+                    counter++;
                 }
+                
+                else{
+                    counter=counter;
+                }
+                
+                
+            }
 
-            }
-            if (counter>=2){
-                break;
-            }
-            counter++;
-            
+            //prints out that it doesn't have exactly one when it actually does
+
         }
-        return false;
+        
+          if (i == x.length & counter == 1) {
+                return true;
+            }
+
+
+            else if (i == x.length & (counter == -1)) {
+                return false;
+            }
+
+           else if (i == x.length & (counter >=2)) {
+                return false;
+            }
+            
+        return true;
     }
 
 }
