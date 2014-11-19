@@ -7,6 +7,8 @@
  This program first allows the user to get dealt a hand of cards to play poker. This can be done until 
  the user decides otherwise. Once the user quits out of the dealing, a frequency chart is created of all
  the frequencies of each rank if they appear only once in a hand.
+ 
+ The frequencies are slightly off, but I am not entirely sure why.
 */
 
 
@@ -22,7 +24,6 @@ public class PokerOdds {
         showHands();
         simulateOdds();
     }
-
     public static boolean exactlyOneDup(String[] x) {
         int counter = -1;
         int i = 0;
@@ -137,10 +138,9 @@ public class PokerOdds {
             System.out.println("Here is your deck of cards: ");
             int j = (int)(Math.random() * 52);
 
+            //picks each card for hand
+            //determines what the suit is of the card picked
             for (int i = 0; i < 5; i++) {
-
-                // System.out.println(deck[j]);
-
 
                 if (j >= 0 & j <= 12) {
                     clubs[c] = deck[j];
@@ -181,6 +181,7 @@ public class PokerOdds {
             System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
             answer = scan.next();
 
+            //reset
             c = 0;
             d = 0;
             h = 0;
@@ -199,22 +200,22 @@ public class PokerOdds {
         int cards = 52;
         String deck[] = new String[cards];
         String hand[] = new String[5];
-        
+
         //used for listing freq of exactly one pair
-            int Aces=0;
-            int Kings=0;
-            int Queens=0;
-            int Jacks=0;
-            int ten=0;
-            int nine=0;
-            int eight=0;
-            int seven=0;
-            int six=0;
-            int five=0;
-            int four=0;
-            int three=0;
-            int two=0;
-            int notExact=0;
+        int Aces = 0;
+        int Kings = 0;
+        int Queens = 0;
+        int Jacks = 0;
+        int ten = 0;
+        int nine = 0;
+        int eight = 0;
+        int seven = 0;
+        int six = 0;
+        int five = 0;
+        int four = 0;
+        int three = 0;
+        int two = 0;
+        int notExact = 0;
 
         //clubs
         deck[0] = "A";
@@ -280,11 +281,13 @@ public class PokerOdds {
 
         int j = (int)(Math.random() * 52);
         int h = 0;
-        
+
         for (int simulation = 0; simulation <= 10000; simulation++) {
             for (int i = 0; i <= 5; i++) {
-                if(deck[j]==null){
-                    j= (int)(Math.random() * 52);
+
+                //takes card from deck and puts into hand, leaving one less card in the deck
+                if (deck[j] == null) {
+                    j = (int)(Math.random() * 52);
                 }
                 hand[h] = deck[j];
                 deck[j] = null;
@@ -298,20 +301,23 @@ public class PokerOdds {
                 if (h == 5) {
                     break;
                 }
-                 if(deck[j]==null){
-                    j= (int)(Math.random() * 52);
+                //makes sure "null" is not included in the hand
+                if (deck[j] == null) {
+                    j = (int)(Math.random() * 52);
                 }
-                
+
             }
 
 
-            
 
+            //if there is only one pair
             if (exactlyOneDup(hand) == true) {
+                //figures out which card is the duplicate
                 for (int k = 1; k < hand.length; k++) {
                     if (hand[k] == hand[k - 1]) {
-                     
-                        switch (hand[k]){
+
+                        //assigns a frequency depending on what rank is paired
+                        switch (hand[k]) {
                             case "A":
                                 Aces++;
                                 break;
@@ -352,15 +358,61 @@ public class PokerOdds {
                                 two++;
                                 break;
                         }
+
+                        if (k != hand.length) {
+                            //assigns a frequency depending on what rank is paired
+                            switch (hand[k]) {
+                                case "A":
+                                    Aces++;
+                                    break;
+                                case "K":
+                                    Kings++;
+                                    break;
+                                case "Q":
+                                    Queens++;
+                                    break;
+                                case "J":
+                                    Jacks++;
+                                    break;
+                                case "10":
+                                    ten++;
+                                    break;
+                                case "9":
+                                    nine++;
+                                    break;
+                                case "8":
+                                    eight++;
+                                    break;
+                                case "7":
+                                    seven++;
+                                    break;
+                                case "6":
+                                    six++;
+                                    break;
+                                case "5":
+                                    five++;
+                                    break;
+                                case "4":
+                                    four++;
+                                    break;
+                                case "3":
+                                    three++;
+                                    break;
+                                case "2":
+                                    two++;
+                                    break;
+                            }
+
+                        }
                     }
                 }
             }
-            
-           
+
+            //if there is not only one pair
             if (exactlyOneDup(hand) == false) {
-                 notExact++;
+                notExact++;
             }
-            
+
 
             //reset the arrays 
             h = 0;
@@ -429,52 +481,24 @@ public class PokerOdds {
 
         }
 
-         System.out.println("Rank            Freq of Exactly One Pair");
-            System.out.println("A:                      "+Aces);
-            System.out.println("K:                      "+Kings);
-            System.out.println("Q:                      "+Queens);
-            System.out.println("J:                      "+Jacks);
-            System.out.println("10:                      "+ten);
-            System.out.println("9:                      "+nine);
-            System.out.println("8:                      "+eight);
-            System.out.println("7:                      "+seven);
-            System.out.println("6:                      "+six);
-            System.out.println("5:                      "+five);
-            System.out.println("4:                      "+four);
-            System.out.println("3:                      "+three);
-            System.out.println("2:                      "+two);
-            System.out.println("----------------------------------------");
-            System.out.println("Total not exactly one pair: "+notExact);
+        //freq.chart
+        System.out.println("Rank            Freq of Exactly One Pair");
+        System.out.println("A:                      " + Aces);
+        System.out.println("K:                      " + Kings);
+        System.out.println("Q:                      " + Queens);
+        System.out.println("J:                      " + Jacks);
+        System.out.println("10:                      " + ten);
+        System.out.println("9:                      " + nine);
+        System.out.println("8:                      " + eight);
+        System.out.println("7:                      " + seven);
+        System.out.println("6:                      " + six);
+        System.out.println("5:                      " + five);
+        System.out.println("4:                      " + four);
+        System.out.println("3:                      " + three);
+        System.out.println("2:                      " + two);
+        System.out.println("----------------------------------------");
+        System.out.println("Total not exactly one pair: " + notExact);
         return "";
     }
 
 }
-
-// Clubs:    J 4 
-// Diamonds: 
-// Hearts:   J 7 4 
-// Spades:   
-
-// Go again? Enter 'y' or 'Y', anything else to quit- y
-// Clubs:    Q 2 
-// Diamonds: A 
-// Hearts:   5 
-// Spades:   J 
-
-// Go again? Enter 'y' or 'Y', anything else to quit- q
-//   rank   freq of exactly one pair
-//     A       312
-//     K       307
-//     Q       339
-//     J       325
-//   10       323
-//     9       334
-//     8       363
-//     7       312
-//     6       339
-//     5       349
-//     4       328
-//     3       293
-//     2       327
-// ----------------------------
-//  total not exactly one pair: 5749

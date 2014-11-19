@@ -1,3 +1,17 @@
+/*Emma Resnick
+  CSE2
+  HW10
+  Program #1
+  
+  This program takes 10 user-inputed ints and decides if any of the ints were duplicated, 
+  and if there is only one pair of duplicates in the set of ints.
+  This continues over and over again until the user does not enter Y or y, quitting the program.
+
+*/
+
+
+
+
 import java.util.Scanner;
 public class FindDuplicates {
     public static void main(String[] arg) {
@@ -50,7 +64,7 @@ public class FindDuplicates {
 
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x.length; j++) {
-
+                //if i !=j and the spots in array x equal each other, there is a duplicate
                 if (x[i] == x[j] & i != j) {
                     return true;
                 }
@@ -68,6 +82,7 @@ public class FindDuplicates {
 
             for (int j = 0; j < x.length; j++) {
                 if (x[i] == x[j] & i != j) {
+                    //counter is used to see how many times a pair shows up
                     counter++;
                 }
                 
@@ -78,19 +93,21 @@ public class FindDuplicates {
                 
             }
 
-            //prints out that it doesn't have exactly one when it actually does
+           
 
         }
         
+        //exactly one pair
           if (i == x.length & counter == 1) {
                 return true;
             }
 
-
+        //no pairs
             else if (i == x.length & (counter == -1)) {
                 return false;
             }
 
+        // more than one pair
            else if (i == x.length & (counter >=2)) {
                 return false;
             }
@@ -99,18 +116,3 @@ public class FindDuplicates {
     }
 
 }
-
-// Sample Output:
-
-// Enter 10 ints- 1 23 1 3 4 5 6 7 8 9 
-// The array {1, 23, 1, 3, 4, 5, 6, 7, 8, 9} has duplicates.
-// The array {1, 23, 1, 3, 4, 5, 6, 7, 8, 9} has exactly one duplicate.
-// Go again? Enter 'y' or 'Y', anything else to quit- y
-// Enter 10 ints- 1 2 3 4 5 6 7 8 9 0
-// The array {1, 2, 3, 4, 5, 6, 7, 8, 9, 0} does not have duplicates.
-// The array {1, 2, 3, 4, 5, 6, 7, 8, 9, 0} does not have exactly one duplicate.
-// Go again? Enter 'y' or 'Y', anything else to quit- y
-// Enter 10 ints- 1 2 1 2 3 4 5 8 9 7
-// The array {1, 2, 1, 2, 3, 4, 5, 8, 9, 7} has duplicates.
-// The array {1, 2, 1, 2, 3, 4, 5, 8, 9, 7} does not have exactly one duplicate.
-// Go again? Enter 'y' or 'Y', anything else to quit- n
