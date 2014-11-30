@@ -9,6 +9,7 @@
 // java HelloWorld//
 
 // define a class
+import java.util.Arrays;
 import java.util.Scanner;
 public class HelloWorld {
 
@@ -205,38 +206,175 @@ public class HelloWorld {
         //   System.out.print(eq);
         // }
 
+        //   int x[]={3, 12, 15, 6, 0, 0, 0, 0, 0};
+        //     System.out.println(Arrays.toString(print(x)));
 
-           Scanner scan = new Scanner(System.in);
-      int OddCount = 0;
-      int EvenCount = 0;
-      String s = null;
-      System.out.println("Enter a list of integers.");
-       if(!s.equals("\\n") ){
-      do{
-         int n = scan.nextInt();
-         if (n%2 == 0){
-            EvenCount++;
-            }
-         else{
-            OddCount++;
-            }
-         s = scan.next();
-        
-      } while(true);
-       }
-       
-       else{
-           break;
-       }
-     
-      
-      System.out.println("Even Count: " + EvenCount);
-      System.out.println("Odd Count: " + OddCount);
-   
+        // String x[]={"one", "two", "to", "fifteen", "three"};
+        // System.out.println(Arrays.toString(range(x)));
 
+        //System.out.println(Arrays.toString(makeZero(10)));
+        // int[] array = {
+        //     4, 4, 5, 65, 34, 1
+        // };
+        // computeAvgs(array);
+
+        //  int [] x={1,10,3,7};
+        // int [] y={2,3,4,5,10,6}; 
+
+        // System.out.print(Arrays.toString(overlap(x,y)));
+
+
+        double[] A = {
+            2.0, 3.0, 3.4
+        };
+        double[] B = {
+            1.2, 3.2, 7.3
+        };
+
+        double[] D = new double[A.length + B.length];
+
+        double temp = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            D[i] = A[i];
+
+            if (i == A.length - 1) {
+                for (int j = 0; j < B.length; j++) {
+                    D[j + A.length] = B[j];
+                }
+            }
+        }
+
+        for (int k = 0; k < D.length; k++) {
+            for (int m = 0; m < k; m++) {
+                    if (D[k] < D[m]) {
+                        temp = D[m];
+                        D[m] = D[k];
+                        D[k] = temp;
+
+                    }
+                }
+                // if(D[k]>D[k+1]){
+                //     min=D[k+1];
+                // }
+        }
+
+        System.out.print(Arrays.toString(D));
+
+
+    }
+
+    // public static int [] overlap(int [] a, int []b){
+    //     int [] array= new int [a.length];
+    //     int counter =0;
+
+    //     for(int i=0; i<a.length; i++){
+    //         for(int j=0; j<b.length; j++){
+    //             if(a[i]==b[j]){
+    //                 array[i]=a[i];
+    //                 counter ++;
+    //             }
+    //         }
+    //     }
+
+    //     array[0]=counter;
+    //     return array;
+    // }
+
+
+
+
+
+    // public static void computeAvgs(int[] x) {
+    //     double sumEven = 0;
+    //     double sumOdd = 0;
+    //     int counterE = 0;
+    //     int counterO = 0;
+    //     for (int i = 0; i < x.length; i++) {
+    //         System.out.print(x[i] + " ");
+
+    //         if (x[i] % 2 == 0) {
+    //             sumEven =x[i]+sumEven;
+    //             counterE++;
+    //         }
+
+    //         if (x[i] % 2 == 1) {
+    //             sumOdd = x[i]+sumOdd;
+    //             counterO++;
+    //         }
+    //     }
+
+    //     System.out.println(" ");
+    //     System.out.println(sumEven);
+    //     System.out.println(sumOdd);
+
+
+    //     System.out.println("Avg Even: " + ((sumEven) / (counterE)));
+    //     System.out.println("Avg Odd: " + ((sumOdd) / (counterO)));
+    // }
 }
 
+//   public static int [] makeZero(int x){
+//       int [] array= new int [x];
+
+//       for(int i=0; i<array.length; i++){
+//           array[i]=0;
+//       }
+
+//       return array;
+//   }
+
+//not finished
+// public static String [] range(String a []){
+//     String min="";
+//     for (int i=0; i<=a.length; i++){
+
+//         if(a[i].length()==a[i+1].length()){
+//             i++;
+
+//         }
+
+
+//         if(a[i].length()>a[i+1].length()){
+//             min=a[i+1];
+//             System.out.println("ok1"+min);
+
+//         }
+
+//          if(a[i].length()<a[i+1].length()){
+//             min=a[i];
+//              System.out.println("ok2"+min);
+//         }
+
+
+//     }
+
+//      return a;
 
 
 
-}
+
+// public static int [] print(int a[]){
+// int aNew []= new int [a[0]];
+// int b=0;
+
+
+// for(int i=1; i<a.length; i++){
+//     if(a[0]>a.length-1){
+//     System.out.println("ERRORRRRRR");
+//     return a;
+//     }
+
+//     if(a[i]!= 0){
+//       aNew[b]=a[i]; 
+//       b++;
+//     }
+
+//     if(a[i]==0){
+//         break;
+//     }
+// }
+
+
+// return aNew;
+// }
