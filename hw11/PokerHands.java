@@ -23,8 +23,7 @@ public class PokerHands {
         String handType = "";
         int[] SUIT = new int[5];
         int [] RANK= new int [5];
-        int counter = 0;
-        
+       
         //setting up card values by suit
         do {
             for (int i = 0; i < 5; i++) {
@@ -169,7 +168,8 @@ public class PokerHands {
             }
 
 
-
+            Arrays.sort(RANK);
+            
             //shows frequency of how many 0,1,2,3,4s are produced by rank[].
             // System.out.println(Arrays.toString(freqRank));
 
@@ -178,6 +178,8 @@ public class PokerHands {
 
             //q has to be 13. 13 different ranks to choose from
             for (int q = 0; q < 13; q++) {
+                
+            
                 
                 //one pair
                 if (freqRank[0] == 9 & freqRank[1] == 3 & freqRank[2] == 1 & rank[q] == 2) {
@@ -200,13 +202,14 @@ public class PokerHands {
                 
                 //full house //not working
                 if (freqRank[0] == 11 & freqRank[1] == 1 & freqRank[3] == 1) {
-                    handType = "Full House.";
-                }
+                        handType = "Full House.";
+                    }
+                    
                 
                 
                  // straight flush not working yet (comes up as flush)
                 if (freqRank[0] == 8 & freqRank[1] == 5 & SUIT[0] == SUIT[1] & SUIT[1] == SUIT[2] & SUIT[2] == SUIT[3] & SUIT[3]
-                == SUIT[4]&hand[0]+1==hand[1]&hand[0]+2==hand[2]&hand[0]+3==hand[3]&hand[0]+4==hand[4]) {
+                == SUIT[4]&(RANK[0]+1==RANK[1])&(RANK[1]+1==RANK[2])&(RANK[2]+1==RANK[3])&(RANK[3]+1==RANK[4])) {
                     handType = "Straight Flush.";
                 }
 
@@ -215,12 +218,12 @@ public class PokerHands {
                     handType = "Flush.";
                 }
 
-                //straight // not working
-                if (freqRank[0] == 8 & freqRank[1] == 5 & SUIT[0] != SUIT[1]& RANK[q]==RANK[q+1]) {
-                handType = "Straight.";
-                }
+                // //straight // not working
+                // if (freqRank[0] == 8 & freqRank[1] == 5 & SUIT[0] != SUIT[1]& RANK[q]==RANK[q+1]) {
+                // handType = "Straight.";
+                // }
                 
-                //royal flush
+                //royal flush needed 
                 
                 //high card
                  if (freqRank[0] == 8 & freqRank[1] == 5 & SUIT[0] != SUIT[1]) {
